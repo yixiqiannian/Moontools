@@ -1,0 +1,45 @@
+{
+  "name": "MoonTools",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix src\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:dev": "npm run dev",
+    "build": "vite build && electron-builder",
+    "star": "electron .",
+    "test": "npm run star"
+  },
+  "build": {
+    "appId": "com.yourcompany.appname",
+    "productName": "MyApp",
+    "directories": {
+      "output": "dist-electron"
+    },
+   "files": [
+    "src/dist/**/*",     
+    "main.js",      
+    "preload.js",
+    "py_exe/**/*",
+    "summary/**/*"
+],
+    "asar": false,
+    "win": {
+      "target": "nsis"  
+  }
+  },
+  "author": "moon",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^36.3.1",
+    "electron-builder": "^26.0.12",
+    "vite": "^6.3.5",
+    "wait-on": "^8.0.3"
+  },
+  "dependencies": {
+    "pinia": "^3.0.2",
+    "vue-router": "^4.5.1"
+  }
+}

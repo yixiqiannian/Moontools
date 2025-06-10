@@ -1,0 +1,10 @@
+# Electron/Node.js 项目通常需要忽略的
+node_modules/
+dist/
+dist-electron/
+*.exe
+*.dmg
+*.AppImage
+*.deb
+*.rpm
+*.snap
