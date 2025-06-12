@@ -4,6 +4,7 @@
       <template #header>
         <div style="display: flex; justify-content: space-between; align-items: center">
           <span>巡检状态</span>
+          <!-- <pre>{{ displayLogs }}</pre> -->
           <div>
             <el-button size="small" @click="showHistory = false">最新状态</el-button>
             <el-button size="small" @click="showHistory = true">所有记录</el-button>
@@ -49,7 +50,9 @@
 import { ref, computed } from 'vue'
 import { useInspectionStore } from '../stores/inspection'
 
+
 const store = useInspectionStore()
+// console.log('当前 store 对象：', store)
 const running = computed(() => store.running)
 const showHistory = ref(false)
 
@@ -64,6 +67,7 @@ const statusType = (status) => {
   if (status.includes('巡检中')) return 'warning'
   return ''
 }
+
 </script>
 
 <style scoped>
